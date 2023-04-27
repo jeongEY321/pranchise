@@ -1,0 +1,5 @@
+package com.pranchiseeeee.shop.service;
+
+public class ShopRepository {
+
+}

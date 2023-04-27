@@ -1,0 +1,19 @@
+package com.pranchiseeeee.shop.domain;
+
+public class Shop {
+
+	private int shopId;
+	private String ownerName;
+	private String shopNumber;
+	private String ownerNumber;
+	private String shopAddress;
+	private String shopOpenDate;
+
+
+
+
+	
+
+	// 기본 생성자 뽑기
+	
+}

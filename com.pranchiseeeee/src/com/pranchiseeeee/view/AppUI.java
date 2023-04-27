@@ -39,15 +39,18 @@ public class AppUI {
 
 	//직원 관리 시스템 화면 출력
 	public static void staffManagementScreen() {
-		
+	
 	}
-	
-	
-	
 	
 	//매장 관리 시스템 화면 출력
 	public static void shopManagementScreen() {
-		
+		System.out.println("\n========== 매장 관리 시스템 ==========");
+		System.out.println("### 1. 매장 추가");
+		System.out.println("### 2. 매장 삭제");
+		System.out.println("### 3. 매장 검색");
+		System.out.println("### 4. 첫 화면으로 돌아가기");
+		System.out.println("--------------------------------------");
+		System.out.print(">>> ");
 	}
 	
 	
