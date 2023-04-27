@@ -1,0 +1,8 @@
+package com.pranchiseeeee.common;
+
+public class AppService {
+
+	void start() {
+	}
+	
+}
