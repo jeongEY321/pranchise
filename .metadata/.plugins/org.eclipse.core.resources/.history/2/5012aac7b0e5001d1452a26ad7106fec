@@ -1,0 +1,61 @@
+package com.pranchiseeeee.sales.repository;
+
+import static com.pranchiseeeee.view.AppUI.inputInteger;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.pranchiseeeee.common.DataBaseConnection;
+import com.pranchiseeeee.sales.domain.Sales;
+
+public class SalesRepository {
+
+	DataBaseConnection connection =
+			DataBaseConnection.getInstance();
+
+
+	//매장 아이디으로 정보 검색
+	public List<Sales> findByShopId(int shopId) {
+		List<Sales> salesList = new ArrayList<>();
+		System.out.print("년도: 20");
+		int year = inputInteger();
+		
+		String sql = "SELECT * FROM sales"+ year +" WHERE shop_id = ?";
+
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, shopId);
+			ResultSet rs = pstmt.executeQuery();	
+
+			while(rs.next()) {
+
+				Sales sales = new Sales(
+						rs.getInt("shop_id"),
+						rs.getInt("january"),
+						rs.getInt("rebruary"),
+						rs.getInt("march"),
+						rs.getInt("april"),
+						rs.getInt("may"),
+						rs.getInt("june"),
+						rs.getInt("guly"),
+						rs.getInt("august"),
+						rs.getInt("september"),
+						rs.getInt("october"),
+						rs.getInt("november"),
+						rs.getInt("december")
+
+						);
+				salesList.add(sales);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return salesList;
+	}
+
+
+}

@@ -1,0 +1,15 @@
+package com.pranchiseeeee.salse.service;
+
+import com.pranchiseeeee.common.AppService;
+import com.pranchiseeeee.shop.repository.ShopRepository;
+
+public class SalesService implements AppService{
+
+	private final SalesService salesService = new SalesService();
+	
+	public void start() {
+		
+		
+	}
+
+}
