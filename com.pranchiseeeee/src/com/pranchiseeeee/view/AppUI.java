@@ -37,19 +37,29 @@ public class AppUI {
 		System.out.print(">>> ");
 	}
 
-	//직원 관리 시스템 화면 출력
+	//직원 관리 시스템
 	public static void staffManagementScreen() {
 	
 	}
 	
-	//매장 관리 시스템 화면 출력
+	//매장 관리 시스템
 	public static void shopManagementScreen() {
 		System.out.println("\n========== 매장 관리 시스템 ==========");
 		System.out.println("### 1. 매장 추가");
 		System.out.println("### 2. 매장 삭제");
 		System.out.println("### 3. 매장 검색");
 		System.out.println("### 4. 첫 화면으로 돌아가기");
-		System.out.println("--------------------------------------");
+		System.out.println("-------------------------------------");
+		System.out.print(">>> ");
+	}
+	
+	//매장 검색 시스템
+	public static void searchBox() {
+		System.out.println("\n=============== 검색 ===============");
+		System.out.println("### 1. 매장 아이디로 검색");
+		System.out.println("### 2. 주소로 검색");
+		System.out.println("### 3. 매장 관리 시스템으로 돌아가기");
+		System.out.println("-------------------------------------");
 		System.out.print(">>> ");
 	}
 	
@@ -61,7 +71,12 @@ public class AppUI {
 	
 	//매출 관리 시스템
 	public static void salesManagementScreen() {
-		
+		System.out.println("\n========== 매출 관리 시스템 ==========");
+		System.out.println("### 1. 매출 작성");
+		System.out.println("### 2. 매출 검색");
+		System.out.println("### 3. 첫 화면으로 돌아가기");
+		System.out.println("-------------------------------------");
+		System.out.print(">>> ");
 	}
 	
 	

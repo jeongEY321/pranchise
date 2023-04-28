@@ -3,6 +3,7 @@ package com.pranchiseeeee.shop.repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,48 +42,77 @@ public class ShopRepository {
 		}
 		
 	}
-//	//매장 이름으로 정보 검색
-//	public List<Shop> findByUserName(String userName) {
-//		List<Shop> userList = new ArrayList<>();
-//		String sql = "SELECT * FROM users WHERE user_name = ?";
-//		
-//		try(Connection conn = connection.getConnection();
-//				PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//			pstmt.setString(1, userName);
-//			ResultSet rs = pstmt.executeQuery();	
-//			
-//			while(rs.next()) {
-//				Grade grade = Grade.valueOf(rs.getString("grade"));
-//				User user = new User(
-//							rs.getInt("user_number"),
-//							rs.getString("user_name"),
-//							rs.getString("phone_number"),
-//							rs.getInt("total_paying"),
-//							grade
-//						);
-//				userList.add(user);
-//			}
-//			
-//		} catch (Exception e) {
-//		e.printStackTrace();
-//		}
-//		return userList;
-//	}
-//	
-//  //매장 번호로 삭제	
-//	public void deleteUser(int delUserNum) {
-//		String sql = "DELETE FROM users WHERE user_number=?";
-//		try(Connection conn = connection.getConnection();
-//				PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//			pstmt.setInt(1, delUserNum);
-//			if(pstmt.executeUpdate() == 1) {
-//				System.out.println("\n### 회원정보가 정상 삭제되었습니다.");
-//			} else {
-//				System.out.println("\n### 검색한 회원의 회원번호으로만 삭제가 가능합니다.");
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	//매장 아이디으로 정보 검색
+	public List<Shop> findByShopId(int shopId) {
+		List<Shop> shopList = new ArrayList<>();
+		String sql = "SELECT * FROM shop WHERE shop_id = ?";
+		
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, shopId);
+			ResultSet rs = pstmt.executeQuery();	
+			
+			while(rs.next()) {
+				
+				Shop shop = new Shop(
+							rs.getInt("shop_id"),
+							rs.getString("owner_name"),
+							rs.getString("shop_number"),
+							rs.getString("owner_number"),
+							rs.getString("shop_address"),
+							rs.getString("shop_open_date")
+						);
+				shopList.add(shop);
+			}
+			
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+		return shopList;
+	}
+	
+	//매장 주소로 정보 검색
+	public List<Shop> findByShopAddress(String shopAddress) {
+		List<Shop> shopList = new ArrayList<>();
+		String sql = "SELECT * FROM shop WHERE shop_address LIKE "+shopAddress;
+				
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();	
+			
+
+			while(rs.next()) {
+				Shop shop = new Shop(
+							rs.getInt("shop_id"),
+							rs.getString("owner_name"),
+							rs.getString("shop_number"),
+							rs.getString("owner_number"),
+							rs.getString("shop_address"),
+							rs.getString("shop_open_date")
+						);
+				shopList.add(shop);
+			}
+			
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+		return shopList;
+	}
+	
+	//매장 번호로 삭제	
+	public void deleteShop(int delShopId) {
+		String sql = "DELETE FROM shop WHERE shop_id=?";
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, delShopId);
+			if(pstmt.executeUpdate() == 1) {
+				System.out.println("\n### 매장정보가 정상 삭제되었습니다.");
+			} else {
+				System.out.println("\n### 검색한 매장의 매장 아이디로만 삭제가 가능합니다.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }

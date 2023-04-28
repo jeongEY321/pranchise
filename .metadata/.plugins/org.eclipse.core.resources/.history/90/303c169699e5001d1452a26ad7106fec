@@ -1,0 +1,61 @@
+package com.pranchiseeeee.salse.domain;
+
+public class Salese {
+
+	private int shopId;
+	private String ownerName;
+	private String shopNumber;
+	private String ownerNumber;
+	private String shopAddress;
+	private String shopOpenDate;
+	public Salese(int shopId, String ownerName, String shopNumber, String ownerNumber, String shopAddress,
+			String shopOpenDate) {
+		super();
+		this.shopId = shopId;
+		this.ownerName = ownerName;
+		this.shopNumber = shopNumber;
+		this.ownerNumber = ownerNumber;
+		this.shopAddress = shopAddress;
+		this.shopOpenDate = shopOpenDate;
+	}
+	public int getShopId() {
+		return shopId;
+	}
+	public void setShopId(int shopId) {
+		this.shopId = shopId;
+	}
+	public String getOwnerName() {
+		return ownerName;
+	}
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+	public String getShopNumber() {
+		return shopNumber;
+	}
+	public void setShopNumber(String shopNumber) {
+		this.shopNumber = shopNumber;
+	}
+	public String getOwnerNumber() {
+		return ownerNumber;
+	}
+	public void setOwnerNumber(String ownerNumber) {
+		this.ownerNumber = ownerNumber;
+	}
+	public String getShopAddress() {
+		return shopAddress;
+	}
+	public void setShopAddress(String shopAddress) {
+		this.shopAddress = shopAddress;
+	}
+	public String getShopOpenDate() {
+		return shopOpenDate;
+	}
+	public void setShopOpenDate(String shopOpenDate) {
+		this.shopOpenDate = shopOpenDate;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,44 @@
+package com.pranchiseeeee.salse.service;
+
+import static com.pranchiseeeee.view.AppUI.inputInteger;
+import static com.pranchiseeeee.view.AppUI.inputString;
+
+import com.pranchiseeeee.common.AppService;
+import com.pranchiseeeee.shop.repository.ShopRepository;
+import com.pranchiseeeee.view.AppUI;
+
+public class SalesService implements AppService{
+
+	private final SalesService salesService = new SalesService();
+	
+	public void start() {
+		
+		while(true) {
+
+			AppUI.searchBox();
+			int selection = inputInteger();
+
+			switch (selection) {
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
+				break;
+			case 4:
+
+				return; //메인 화면으로 돌아가기
+
+			default:
+				System.out.println("메뉴를 다시 입력하세요.");
+			}
+			System.out.println("\n====== 계속 진행하시려면 ENTER 를 누르세요 ======");
+			inputString();
+		}
+		
+	}
+
+}
