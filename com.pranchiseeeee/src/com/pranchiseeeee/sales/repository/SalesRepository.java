@@ -55,6 +55,77 @@ public class SalesRepository {
 		}
 		return salesList;
 	}
+	
+	//추가 수정
+	public Object findBySales(int shopId) {
+		System.out.print("년도: 20");
+		int year = inputInteger();
+		System.out.print("몇월 (숫자만 입력): ");
+		int mon = inputInteger();
+		String mont = "";
+		System.out.print("값: ");
+		int money = inputInteger();
+		
+		switch (mon) {
+		case 1:
+			mont = "january";
+			break;
+		case 2:
+			mont = "february";
+			break;
+		case 3:
+			mont = "march";
+			break;
+		case 4:
+			mont = "april";
+			break;
+		case 5:
+			mont = "may";
+			break;
+		case 6:
+			mont = "june";
+			break;
+		case 7:
+			mont = "july";
+			break;
+		case 8:
+			mont = "august";
+			break;
+		case 9:
+			mont = "september";
+			break;
+		case 10:
+			mont = "october";
+			break;
+		case 11:
+			mont = "november";
+			break;
+		case 12:
+			mont = "december";
+			break;
+			
+
+		default:
+			System.out.println("1 ~ 12 중 골라주세요.");
+			break;
+		}
+		
+		
+		
+		String sql = "Update " + "sales"+ year + " SET " + mont + " = " + money + " WHERE shop_id = "+shopId;
+		
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			
+			
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sql;
+	}
 
 
 }

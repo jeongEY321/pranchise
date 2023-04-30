@@ -23,7 +23,7 @@ public class ShopService implements AppService{
 
 			switch (selection) {
 			case 1:
-				join();
+				joinShop();
 				break;
 			case 2:
 				deleteShop();
@@ -47,7 +47,7 @@ public class ShopService implements AppService{
 	}
 
 	//매장 추가
-	private void join() {
+	private void joinShop() {
 
 		System.out.println("\n====== 매장 추가를 진행합니다. ======");
 		System.out.print("# 점주명: ");

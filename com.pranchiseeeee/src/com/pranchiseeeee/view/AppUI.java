@@ -72,7 +72,7 @@ public class AppUI {
 	//매출 관리 시스템
 	public static void salesManagementScreen() {
 		System.out.println("\n========== 매출 관리 시스템 ==========");
-		System.out.println("### 1. 매출 작성");
+		System.out.println("### 1. 매출 작성/수정");
 		System.out.println("### 2. 매출 검색");
 		System.out.println("### 3. 첫 화면으로 돌아가기");
 		System.out.println("-------------------------------------");

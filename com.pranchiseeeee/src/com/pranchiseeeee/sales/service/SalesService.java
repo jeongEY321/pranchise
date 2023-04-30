@@ -12,9 +12,9 @@ import static com.pranchiseeeee.view.AppUI.inputString;
 public class SalesService implements AppService{
 
 	private final SalesRepository salesRepository = new SalesRepository();
-	
+
 	public void start() {
-		
+
 		while(true) {
 
 			AppUI.salesManagementScreen();
@@ -22,10 +22,10 @@ public class SalesService implements AppService{
 
 			switch (selection) {
 			case 1:
-				
+				joinSales();
 				break;
 			case 2:
-				
+
 				showSearchResult();
 				break;
 			case 3:
@@ -38,11 +38,35 @@ public class SalesService implements AppService{
 			System.out.println("\n====== 계속 진행하시려면 ENTER 를 누르세요 ======");
 			inputString();
 		}
-		
+
 	}
 
-	
-	
+
+
+
+
+
+
+	//수정및 추가
+	private int joinSales() {
+
+		System.out.println("\n==================== 매장 추가/수정 ====================");
+		System.out.println("\n============ 추가/수정은 저번달 값만 가능합니다. ============");
+		String a = (String) serchShopSale();
+
+		return 0;
+	}
+
+
+
+	private Object serchShopSale() {
+		System.out.println("\n### 조회할 매장의 번호를 입력하세요.");
+		System.out.print(">>> ");
+		int shopId = inputInteger();
+		return salesRepository.findBySales(shopId);
+
+	}
+
 
 
 
@@ -54,10 +78,10 @@ public class SalesService implements AppService{
 		int shopId = inputInteger();
 		return salesRepository.findByShopId(shopId);
 	}
-	
-	
-	
-	
+
+
+
+
 	//검색
 	private int showSearchResult() {
 		List<Sales> shop = searchShopId();
