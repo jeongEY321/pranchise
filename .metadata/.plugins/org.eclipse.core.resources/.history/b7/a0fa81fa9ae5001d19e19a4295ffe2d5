@@ -1,0 +1,116 @@
+package com.pranchiseeeee.hdofc.service;
+
+import java.util.List;
+
+import com.pranchiseeeee.common.AppService;
+import com.pranchiseeeee.hdofc.doamin.HdofcUser;
+import com.pranchiseeeee.hdofc.repository.hdofcUserRepositiry;
+import com.pranchiseeeee.view.AppUI;
+
+import static com.pranchiseeeee.view.AppUI.inputInteger;
+import static com.pranchiseeeee.view.AppUI.inputString;
+
+public class hdofcUserService implements AppService {
+
+	
+	private final hdofcUserRepositiry hdofcUserRps = new hdofcUserRepositiry();
+	
+	public void start() {
+		while(true) {
+			AppUI.staffManagementScreen();
+			int selection = inputInteger();
+			
+			switch (selection) {
+			case 1:
+				showHdofcUser();
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				
+				break;
+			case 5:
+				return;
+				
+
+			default:
+				break;
+			}
+			
+			
+		}
+	}
+	
+	
+	
+	// 이름 검색
+	private List<HdofcUser> searchHdofcUSerName() {
+		System.out.println("\n ##### 조회 하실 이름: ####");
+		System.out.print(">>> ");
+		String name = inputString();
+		return hdofcUserRps.findUserName(name);
+		
+		
+	}
+	// ID 검색
+	private  List<HdofcUser> searchHdofcUserNum() {
+		System.out.println("\n ##### 조회 하실 번호: ####");
+		System.out.print(">>> ");
+		int num = inputInteger();
+		return hdofcUserRps.findUserNum(num);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// 이름으로 조회하기 질문 창
+	
+	
+	private int showHdofcUser() {
+		
+		List<HdofcUser> hdofcUsers = searchHdofcUserNum();
+		
+		System.out.println("\n ##### 조회 하실 이름: ####");
+		System.out.println("\n 1. ID로 검색");
+		System.out.println("\n 2. 이름으로 검색");
+		System.out.print(">>> ");
+		int number = inputInteger();
+		
+		
+//		if(number == 1) {
+//			System.out.println("ID를 입력해주세요: ");
+//			System.out.println(">>> ");
+//			int num = inputInteger();
+//			return hdofcUserRps.findUserNum(num);
+			
+			
+				
+			}
+		}
+		
+		
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

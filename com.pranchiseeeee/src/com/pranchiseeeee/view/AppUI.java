@@ -13,8 +13,10 @@ public class AppUI {
 
 	public static int inputInteger() {
 		int num = 0;
+		
 		try {
 			num = sc.nextInt();
+			
 		} catch (InputMismatchException e) {
 			System.out.println("정수로 입력해 주세요.");
 		} finally {
@@ -24,7 +26,12 @@ public class AppUI {
 		return num;
 	}
 
-
+	public static double inputDouble() {
+		return sc.nextDouble();
+	}
+	
+	
+	
 	//시작 화면 출력
 	public static void startScreen() {
 		System.out.println("\n========== 프렌차이즈 관리 ==========");
@@ -39,9 +46,34 @@ public class AppUI {
 
 	//직원 관리 시스템
 	public static void staffManagementScreen() {
+<<<<<<< HEAD
+
+		System.out.println("\n========== 본사 직원 관리 시스템==========");
+		System.out.println("### 1. 직원 검색");
+		System.out.println("### 2. 직원 정보 추가");
+		System.out.println("### 3. 직원 정보 삭제");
+		System.out.println("### 4. 월급 계산");
+		System.out.println("### 5. 돌아가기");
+		System.out.println("=======================================");
+		System.out.print(">>> ");
+	}
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+
+=======
 	
 	}
 	
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
 	//매장 관리 시스템
 	public static void shopManagementScreen() {
 		System.out.println("\n========== 매장 관리 시스템 ==========");

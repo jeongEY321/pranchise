@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<qualifiedTypeNameHistroy/>
+=======
+=======
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
@@ -19,3 +25,7 @@
     <fullyQualifiedTypeName name="com.pranchiseeeee.common.AppService"/>
     <fullyQualifiedTypeName name="com.pranchiseeeee.sales.repository.SalesRepository"/>
 </qualifiedTypeNameHistroy>
+<<<<<<< HEAD
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
+=======
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d

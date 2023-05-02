@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-17"/>
 	<item key="org.eclipse.jdt.ui.last.selected.create.moduleinfo.comments" value="false"/>
@@ -25,10 +30,19 @@
 		<item key="create_constructor" value="false"/>
 		<item key="create_unimplemented" value="true"/>
 	</section>
+<<<<<<< HEAD
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
+=======
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
 	<section name="completion_proposal_size">
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
 	<section name="JavaBuildConfigurationBlock">
 		<item key="expanded0" value="true"/>
 		<item key="expanded1" value="false"/>
@@ -81,4 +95,8 @@
 		<item key="patterns" value="*"/>
 		<item key="renameSubpackages" value="false"/>
 	</section>
+<<<<<<< HEAD
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
+=======
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
 </section>
