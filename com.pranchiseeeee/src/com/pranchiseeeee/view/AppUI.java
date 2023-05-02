@@ -46,6 +46,7 @@ public class AppUI {
 
 	//직원 관리 시스템
 	public static void staffManagementScreen() {
+
 		System.out.println("\n========== 본사 직원 관리 시스템==========");
 		System.out.println("### 1. 직원 검색");
 		System.out.println("### 2. 직원 정보 추가");
@@ -62,6 +63,11 @@ public class AppUI {
 	
 	
 	
+
+	
+	
+	
+
 	//매장 관리 시스템
 	public static void shopManagementScreen() {
 		System.out.println("\n========== 매장 관리 시스템 ==========");

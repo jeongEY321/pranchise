@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 INDEX VERSION 1.131+C:\work\franchisee\.metadata\.plugins\org.eclipse.jdt.core
 192081947.index
 1042005462.index
 792392879.index
 1865797976.index
+=======
+INDEX VERSION 1.131+C:\Users\kings\OneDrive\¹ÙÅÁ È­¸é\franchise\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+792392879.index
+960544903.index
+>>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d

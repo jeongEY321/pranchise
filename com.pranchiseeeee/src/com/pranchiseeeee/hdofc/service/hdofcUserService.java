@@ -106,7 +106,7 @@ public class hdofcUserService implements AppService {
 
 	}
 
-	// 회원 추가 로직
+	// 회원 추가 로직ㅣ
 	
 	private void joinUser() {
 		
