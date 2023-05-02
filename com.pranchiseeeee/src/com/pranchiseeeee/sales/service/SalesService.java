@@ -29,6 +29,9 @@ public class SalesService implements AppService{
 				showSearchResult();
 				break;
 			case 3:
+				showMonthly();
+				break;
+			case 4:
 
 				return; //메인 화면으로 돌아가기
 
@@ -41,6 +44,28 @@ public class SalesService implements AppService{
 
 	}
 
+
+
+
+
+
+
+	
+	
+	
+	//월 평균 구하기
+	private void showMonthly() {
+		System.out.println("\n==================== 매장 월매출 평균 ====================");
+		searchMonthly();
+	}
+
+	
+	private int searchMonthly() {
+		System.out.println("\n### 조회할 매장의 번호를 입력하세요.");
+		System.out.print(">>> ");
+		int shopId = inputInteger();
+		return salesRepository.findByMonthly(shopId);
+	}
 
 
 
