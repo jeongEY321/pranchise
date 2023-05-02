@@ -1,6 +1,8 @@
 package com.pranchiseeeee.main;
 
 import com.pranchiseeeee.common.AppService;
+import com.pranchiseeeee.sales.service.SalesService;
+import com.pranchiseeeee.shop.service.ShopService;
 
 import com.pranchiseeeee.hdofc.service.hdofcUserService;
 import com.pranchiseeeee.sales.service.SalesService;
