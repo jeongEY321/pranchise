@@ -16,7 +16,6 @@ public class Main {
 			controller.chooseSystem(selectNumber);
 		}
 
-
 	}
 
 }
