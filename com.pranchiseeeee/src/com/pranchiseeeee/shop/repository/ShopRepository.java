@@ -49,6 +49,8 @@ public class ShopRepository {
 
 
 
+
+
 	// 매장 추가 시 매출관리표에 추가
 	private void addSales() {
 		String sql = "INSERT INTO sales23 "
@@ -58,7 +60,7 @@ public class ShopRepository {
 		try(Connection conn = connection.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setInt(1, 0);
-			
+
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -67,10 +69,32 @@ public class ShopRepository {
 
 	}
 
+	public List<Shop> findByAll() {
+		List<Shop> shopList = new ArrayList<>();
+		String sql = "SELECT * FROM shop";
 
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();	
 
+			while(rs.next()) {
 
+				Shop shop = new Shop(
+						rs.getInt("shop_id"),
+						rs.getString("owner_name"),
+						rs.getString("shop_number"),
+						rs.getString("owner_number"),
+						rs.getString("shop_address"),
+						rs.getString("shop_open_date")
+						);
+				shopList.add(shop);
+			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return shopList;
+	}
 
 
 	//매장 아이디으로 정보 검색
@@ -145,5 +169,28 @@ public class ShopRepository {
 			e.printStackTrace();
 		}
 	}
+
+	//오픈일을 보기위한 검색
+	public List<Shop> findByOpenDate() {
+		List<Shop> shopList = new ArrayList<>();
+		String sql = "SELECT shop_id, shop_open_date FROM shop";
+
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();	
+			while(rs.next()) {
+
+				int a =	rs.getInt("shop_id");
+				String b = rs.getString("shop_open_date");
+				System.out.println("## 매장번호: " + a + ", 매장 오픈일: " + b);
+				
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return shopList;
+	}
+
 
 }

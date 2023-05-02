@@ -1,18 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-INDEX VERSION 1.131+C:\work\franchisee\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.132+C:\work\franchise\.metadata\.plugins\org.eclipse.jdt.core
+1731063414.index
+3069134441.index
+1865797976.index
+792392879.index
 192081947.index
-1042005462.index
-792392879.index
-1865797976.index
-=======
-=======
->>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
-INDEX VERSION 1.131+C:\Users\kings\OneDrive\πŸ≈¡ »≠∏È\franchise\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-792392879.index
-960544903.index
-<<<<<<< HEAD
->>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
-=======
->>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d

@@ -2,6 +2,8 @@ package com.pranchiseeeee.sales.service;
 
 import java.util.List;
 import com.pranchiseeeee.sales.repository.SalesRepository;
+import com.pranchiseeeee.shop.domain.Shop;
+import com.pranchiseeeee.shop.repository.ShopRepository;
 import com.pranchiseeeee.common.AppService;
 import com.pranchiseeeee.sales.domain.Sales;
 import com.pranchiseeeee.view.AppUI;
@@ -12,6 +14,7 @@ import static com.pranchiseeeee.view.AppUI.inputString;
 public class SalesService implements AppService{
 
 	private final SalesRepository salesRepository = new SalesRepository();
+	private final ShopRepository shopRepository = new ShopRepository();
 
 	public void start() {
 
@@ -44,22 +47,14 @@ public class SalesService implements AppService{
 
 	}
 
-
-
-
-
-
-
-	
-	
-	
 	//월 평균 구하기
 	private void showMonthly() {
 		System.out.println("\n==================== 매장 월매출 평균 ====================");
+		List<Shop> shop = shopRepository.findByOpenDate();
 		searchMonthly();
 	}
 
-	
+
 	private int searchMonthly() {
 		System.out.println("\n### 조회할 매장의 번호를 입력하세요.");
 		System.out.print(">>> ");
@@ -109,16 +104,39 @@ public class SalesService implements AppService{
 
 	//검색
 	private int showSearchResult() {
-		List<Sales> shop = searchShopId();
-		if(!shop.isEmpty()) {
-			System.out.println("\n==================== 매장 조회 결과 ====================");
-			for(Sales sa : shop) {
-				System.out.println(sa);
+		System.out.println("\n=============== 검색 방법 ==============");
+		System.out.println("\n### 1. 매장 아이디로 검색");
+		System.out.println("\n### 2. 전체 검색");
+		System.out.print(">>> ");
+		int name = inputInteger();
+
+
+		if(name == 1) {
+			List<Sales> shop = searchShopId();
+			if(!shop.isEmpty()) {
+				System.out.println("\n==================== 매장 조회 결과 ====================");
+				for(Sales sa : shop) {
+					System.out.println(sa);
+				}
+			} else {
+				System.out.println("\n### 조회 결과가 없습니다.");
 			}
+			return shop.size();
+		} else if(name == 2) {
+			List<Sales> shop = salesRepository.findByAll();
+			if(!shop.isEmpty()) {
+				System.out.println("\n==================== 매장 조회 결과 ====================");
+				for(Sales sa : shop) {
+					System.out.println(sa);
+				}
+			} else{
+				System.out.println("\n### 조회 결과가 없습니다.");
+			}
+			return shop.size();
 		} else {
-			System.out.println("\n### 조회 결과가 없습니다.");
+			System.out.println("잘못입력하셨습니다.");
+			return -1;
 		}
-		return shop.size();
 	}
 
 }

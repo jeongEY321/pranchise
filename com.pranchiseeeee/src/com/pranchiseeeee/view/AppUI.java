@@ -46,7 +46,6 @@ public class AppUI {
 
 	//직원 관리 시스템
 	public static void staffManagementScreen() {
-<<<<<<< HEAD
 
 		System.out.println("\n========== 본사 직원 관리 시스템==========");
 		System.out.println("### 1. 직원 검색");
@@ -59,21 +58,6 @@ public class AppUI {
 	}
 	
 	
-	
-	
-	
-	
-	
-
-	
-	
-	
-
-=======
-	
-	}
-	
->>>>>>> a6071f1ae72cb80a43e91d4b16c4c2fdb4d4a53d
 	//매장 관리 시스템
 	public static void shopManagementScreen() {
 		System.out.println("\n========== 매장 관리 시스템 ==========");
@@ -84,17 +68,6 @@ public class AppUI {
 		System.out.println("-------------------------------------");
 		System.out.print(">>> ");
 	}
-	
-	//매장 검색 시스템
-	public static void searchBox() {
-		System.out.println("\n=============== 검색 ===============");
-		System.out.println("### 1. 매장 아이디로 검색");
-		System.out.println("### 2. 주소로 검색");
-		System.out.println("### 3. 매장 관리 시스템으로 돌아가기");
-		System.out.println("-------------------------------------");
-		System.out.print(">>> ");
-	}
-	
 	
 	//메뉴관리 시스템
 	public static void menuManagementScreen() {
