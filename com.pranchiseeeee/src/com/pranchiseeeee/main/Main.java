@@ -3,6 +3,7 @@ package com.pranchiseeeee.main;
 import com.pranchiseeeee.view.AppUI;
 
 import static com.pranchiseeeee.view.AppUI.inputInteger;
+import static com.pranchiseeeee.view.AppUI.inputDouble;
 
 public class Main {
 
@@ -15,7 +16,7 @@ public class Main {
 			int selectNumber = inputInteger();
 			controller.chooseSystem(selectNumber);
 		}
-
+		
 
 	}
 

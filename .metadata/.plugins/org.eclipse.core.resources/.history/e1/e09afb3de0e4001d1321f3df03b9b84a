@@ -1,0 +1,5 @@
+package com.pranchiseeeee.hdofc.domain;
+
+public class User {
+
+}

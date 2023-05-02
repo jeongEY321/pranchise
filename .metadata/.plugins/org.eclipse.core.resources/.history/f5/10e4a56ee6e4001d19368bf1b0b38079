@@ -1,0 +1,42 @@
+package com.pranchiseeeee.shop.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.pranchiseeeee.common.DataBaseConnection;
+import com.pranchiseeeee.shop.domain.Shop;
+
+public class ShopRepository {
+
+	DataBaseConnection connection =
+			DataBaseConnection.getInstance();
+	
+	
+	public void addShop(Shop shop) {
+		
+		System.out.println("repository: " + shop);
+		String sql = "INSERT INTO shop "
+				+ "(shop_id, owner_name, shop_number, owner_number, shop_address, shop_open_date) "
+				+ "VALUES(shop_seq.NEXTVAL,?,?,?,?,?)";
+		
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, shop.getOwnerName());
+			pstmt.setString(2, shop.getShopNumber());
+			pstmt.setString(3, shop.getOwnerNumber());
+			pstmt.setString(4, shop.getShopAddress());
+			pstmt.setString(5, shop.getShopOpenDate());
+			
+			if(pstmt.executeUpdate() == 1) {
+				System.out.println("매장 추가가 정상 처리되었습니다.");
+			} else {
+				System.out.println("매장 추가에 실패했습니다. 관리자에게 문의하세요.");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+}
