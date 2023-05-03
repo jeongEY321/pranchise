@@ -3,6 +3,14 @@ package com.pranchiseeeee.main;
 import com.pranchiseeeee.common.AppService;
 import com.pranchiseeeee.sales.service.SalesService;
 import com.pranchiseeeee.shop.service.ShopService;
+import com.pranchiseeeee.hdofc.service.hdofcUserService;
+import com.pranchiseeeee.menu.service.ChooseMenu;
+import com.pranchiseeeee.sales.service.SalesService;
+import com.pranchiseeeee.shop.service.ShopService;
+
+
+import com.pranchiseeeee.sales.service.SalesService;
+import com.pranchiseeeee.shop.service.ShopService;
 
 public class AppController {
 	
@@ -12,13 +20,13 @@ public class AppController {
 		public void chooseSystem(int selectNumber) {
 			switch (selectNumber) {
 			case 1: 
-				
+				service = new hdofcUserService();
 				break;
 			case 2: 
 				service = new ShopService();
 				break;
 			case 3: 
-				
+				service = new ChooseMenu();
 				break;
 			case 4: 
 				service = new SalesService();

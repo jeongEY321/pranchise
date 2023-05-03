@@ -17,6 +17,50 @@ public class SalesRepository {
 	DataBaseConnection connection =
 			DataBaseConnection.getInstance();
 
+	//전체 검색
+	public List<Sales> findByAll() {
+		List<Sales> salesList = new ArrayList<>();
+		System.out.print("년도: 20");
+		int year = inputInteger();
+
+		String sql = "SELECT * FROM sales"+ year;
+
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+
+			while(rs.next()) {
+
+				Sales sales = new Sales(
+						rs.getInt("shop_id"),
+						rs.getInt("january"),
+						rs.getInt("february"),
+						rs.getInt("march"),
+						rs.getInt("april"),
+						rs.getInt("may"),
+						rs.getInt("june"),
+						rs.getInt("july"),
+						rs.getInt("august"),
+						rs.getInt("september"),
+						rs.getInt("october"),
+						rs.getInt("november"),
+						rs.getInt("december")
+
+						);
+				salesList.add(sales);
+			}
+
+		} catch (Exception e) {
+			if(year > 23) {
+				System.out.println("\n미래의 매출자료는 없습니다.");
+			} else {
+				System.out.println("\n작성하신 년도에는 아직 매장 오픈을 하지 않았습니다.");
+			}
+		}
+		return salesList;
+	}
+
+
 
 	//매장 아이디으로 정보 검색
 	public List<Sales> findByShopId(int shopId) {
@@ -135,7 +179,9 @@ public class SalesRepository {
 		try(Connection conn = connection.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
+
 			ResultSet rs = pstmt.executeQuery();
+
 			int count = 0;
 			int sum = 0;
 			int err = 0;
@@ -155,6 +201,7 @@ public class SalesRepository {
 						rs.getInt("november"),
 						rs.getInt("december")
 				};
+
 				for(int i : abc) {
 					sum += i;
 					if(i == 0) {
@@ -166,7 +213,7 @@ public class SalesRepository {
 					System.out.println("매출작성을 안하셨습니다.");
 					break;
 				}
-				
+
 				if(abc.length == 0) {
 					System.out.println("매장 오픈하기 전 년도 입니다.");
 				}
@@ -175,11 +222,9 @@ public class SalesRepository {
 
 
 			}
-			
 			if(err == 0) { // 값이 없을 때
 				System.out.println("\n" + year + "년도엔 작성하신 매장이 없습니다.");
 			}
-			
 		} catch (Exception e) {
 			//년도 에러 (테이블이 없을 때 에러)
 			if(year > 23) {
@@ -188,10 +233,8 @@ public class SalesRepository {
 				System.out.println("\n작성하신 년도에는 아직 매장 오픈을 하지 않았습니다.");
 			}
 		}
+
 		return 0;
 	}
 
 }
-
-
-
