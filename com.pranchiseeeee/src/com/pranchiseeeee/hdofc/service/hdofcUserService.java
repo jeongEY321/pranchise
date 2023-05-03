@@ -40,9 +40,10 @@ public class hdofcUserService implements AppService {
 
 
 			default:
-				break;
+				System.out.println("메뉴를 다시 입력하세요.");
 			}
-
+			System.out.println("\n====== 계속 진행하시려면 ENTER 를 누르세요 ======");
+			inputString();
 
 		}
 	}
@@ -65,7 +66,12 @@ public class hdofcUserService implements AppService {
 		int num = inputInteger();
 		return hdofcUserRps.findUserNum(num);
 	}
-
+	// 전체 검색
+	private List<HdofcUser> searchHdofcAllUser() {
+		System.out.println("======== enter를 눌러서 진행해주세요 ======== ");
+		inputString();
+		return hdofcUserRps.findAllUser();
+	}
 	// 이름으로 조회하기 질문 창
 
 	private int showHdofcUser() {
@@ -73,6 +79,7 @@ public class hdofcUserService implements AppService {
 		System.out.println("\n ##### 조회 하실 이름: ####");
 		System.out.println("\n 1. ID로 검색");
 		System.out.println("\n 2. 이름으로 검색");
+		System.out.println("\n 3. 전체 검색");
 		System.out.print(">>> ");
 		int number = inputInteger();
 
@@ -88,8 +95,19 @@ public class hdofcUserService implements AppService {
 				System.out.println("조회 결과가 없습니다.");
 			}
 			return showNum.size();
-		} else if (number > 2 || number < 1) {
+		} else if (number > 3 || number < 1) {
 			return -1;
+		} else if(number == 3) {
+			List<HdofcUser>	showNum = searchHdofcAllUser();
+			if(!showNum.isEmpty()) {
+				System.out.println("조회 결과 입니다.");
+				for(HdofcUser  user : showNum) {
+					System.out.println(user);
+				}
+			} else {
+				System.out.println("조회 결과가 없습니다.");
+			}
+			return showNum.size();
 		} else {
 			List<HdofcUser> showName = searchHdofcUSerName();
 			if(!showName.isEmpty()) {
@@ -164,15 +182,19 @@ public class hdofcUserService implements AppService {
 			}
 		}
 	
-	
+	// 월급계산
 		private int calcSalary() {
-			if(showHdofcUser() > 0) {
-				System.out.println("정보 확인 후 번호를 입력하시면 얼급이 계산이 됩니다.");
-				System.out.print(">>>");
-				int calNum = inputInteger();
-				return hdofcUserRps.calcSalary(calNum);
+			List<HdofcUser>	showNum = searchHdofcAllUser();
+			for(HdofcUser  user : showNum) {
+				System.out.println(user);
 			}
-			return 0;
+			System.out.println("조회하실 ID를 입력해주세요: ");
+			System.out.println(">>>");
+				int calNum = inputInteger();
+				
+					return hdofcUserRps.calcSalary(calNum);
+			
+			
 		}
 		
 		

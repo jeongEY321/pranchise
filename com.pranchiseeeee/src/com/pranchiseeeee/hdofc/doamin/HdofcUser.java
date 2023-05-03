@@ -2,7 +2,7 @@ package com.pranchiseeeee.hdofc.doamin;
 
 public class HdofcUser {
 
-	private String hdofcId;
+	private int hdofcId;
 	private String hdofcName;
 	private String hdofcRrnum;
 	private String hdofcAddress;
@@ -14,7 +14,7 @@ public class HdofcUser {
 	
 	public HdofcUser() {}
 
-	public HdofcUser(String hdofcId, String hdofcName, String hdofcRrnum, String hdofcAddress, int hdofcHiredate,
+	public HdofcUser(int hdofcId, String hdofcName, String hdofcRrnum, String hdofcAddress, int hdofcHiredate,
 			String hdofcTeam, String hdofcPosition, int hdofcSalary, double hdofcBonus) {
 		super();
 		this.hdofcId = hdofcId;
@@ -28,11 +28,11 @@ public class HdofcUser {
 		this.hdofcBonus = hdofcBonus;
 	}
 
-	public String getHdofcId() {
+	public int getHdofcId() {
 		return hdofcId;
 	}
 
-	public void setHdofcId(String hdofcId) {
+	public void setHdofcId(int hdofcId) {
 		this.hdofcId = hdofcId;
 	}
 
