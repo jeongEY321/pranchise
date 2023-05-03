@@ -12,7 +12,6 @@ import java.util.List;
 import com.pranchiseeeee.common.DataBaseConnection;
 import com.pranchiseeeee.sales.domain.Sales;
 
-
 public class SalesRepository {
 
 	DataBaseConnection connection =

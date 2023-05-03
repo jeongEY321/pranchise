@@ -1,11 +1,13 @@
 package com.pranchiseeeee.sales.service;
 
 import java.util.List;
+
+import com.pranchiseeeee.sales.domain.Sales;
 import com.pranchiseeeee.sales.repository.SalesRepository;
 import com.pranchiseeeee.shop.domain.Shop;
 import com.pranchiseeeee.shop.repository.ShopRepository;
 import com.pranchiseeeee.common.AppService;
-import com.pranchiseeeee.sales.domain.Sales;
+
 import com.pranchiseeeee.view.AppUI;
 import static com.pranchiseeeee.view.AppUI.inputInteger;
 import static com.pranchiseeeee.view.AppUI.inputString;
