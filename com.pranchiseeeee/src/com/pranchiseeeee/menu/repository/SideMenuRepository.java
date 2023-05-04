@@ -66,7 +66,6 @@ public class SideMenuRepository {
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				) {
 			ResultSet rs = pstmt.executeQuery();
-			System.out.println(sql);
 			while(rs.next()) {
 				SideMenu sidemenu = new SideMenu(
 						rs.getString("sidemenu_name"),
