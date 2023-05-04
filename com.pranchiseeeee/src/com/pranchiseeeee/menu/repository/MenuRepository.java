@@ -36,7 +36,7 @@ public class MenuRepository {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("(੭•̀ᴗ•̀)੭ 중복 메뉴는 등록이 불가능합니다.");
 		}
 
 	}

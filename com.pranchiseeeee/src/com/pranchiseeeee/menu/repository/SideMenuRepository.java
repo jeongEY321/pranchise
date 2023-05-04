@@ -39,7 +39,7 @@ public class SideMenuRepository {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("(੭•̀ᴗ•̀)੭ 중복 사이드메뉴는 등록이 불가능합니다.");
 		}
 
 	}

@@ -14,8 +14,8 @@ DROP TABLE side_menu;
 CREATE TABLE shop(
     shop_id NUMBER NOT NULL PRIMARY KEY,
     owner_name VARCHAR2(3000) NOT NULL,
-    shop_number VARCHAR2(3000) NOT NULL,
-    owner_number VARCHAR2(3000) NOT NULL,
+    shop_number VARCHAR2(3000) PRIMARY KEY,
+    owner_number VARCHAR2(3000) PRIMARY KEY,
     shop_address VARCHAR2(3000) NOT NULL,
     shop_open_date VARCHAR2(3000)
 );
@@ -138,7 +138,7 @@ VALUES (sales23_seq.NEXTVAL, 0, 0, 0, 5000, 0, 0, 0, 0, 0, 0, 0, 0);
 CREATE TABLE hdofc (
     hdofc_id VARCHAR2(15) PRIMARY KEY,
     hdofc_name VARCHAR2(20)NOT NULL,
-    hdofc_rrnum VARCHAR2(30)NOT NULL,
+    hdofc_rrnum VARCHAR2(30)PRIMARY KEY,
     hdofc_address VARCHAR2(30)NOT NULL,
     hdofc_hire_date NUMBER(20) NOT NULL,
     hdofc_team VARCHAR2(10)NOT NULL,
