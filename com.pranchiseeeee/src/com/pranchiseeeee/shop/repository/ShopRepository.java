@@ -31,9 +31,9 @@ public class ShopRepository {
 			pstmt.setString(5, shop.getShopOpenDate());
 
 			if(pstmt.executeUpdate() == 1) {
-				System.out.println("매장 추가가 정상 처리되었습니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 매장 추가가 정상 처리되었습니다.");
 			} else {
-				System.out.println("매장 추가에 실패했습니다. 관리자에게 문의하세요.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 매장 추가에 실패했습니다. 관리자에게 문의하세요.");
 			}
 
 		} catch (Exception e) {
@@ -161,9 +161,9 @@ public class ShopRepository {
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setInt(1, delShopId);
 			if(pstmt.executeUpdate() == 1) {
-				System.out.println("\n### 매장정보가 정상 삭제되었습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 매장정보가 정상 삭제되었습니다.");
 			} else {
-				System.out.println("\n### 검색한 매장의 매장 아이디로만 삭제가 가능합니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 검색한 매장의 매장 아이디로만 삭제가 가능합니다.");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -158,9 +158,9 @@ public class hdofcUserRepositiry {
 			pstmt.setDouble(8, user.getHdofcBonus());
 			
 			if(pstmt.executeUpdate() == 1.0) {
-				System.out.println("회원가입이 정상 처리되었습니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 회원가입이 정상 처리되었습니다.");
 			} else {
-				System.out.println("회원 가입에 실패했습니다. 관리자에게 문의하세요.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 회원 가입에 실패했습니다. 관리자에게 문의하세요.");
 			}			
 			
 			
@@ -183,9 +183,9 @@ public class hdofcUserRepositiry {
 					PreparedStatement pstmt = conn.prepareStatement(sql)) {
 				pstmt.setInt(1, fireNum);
 				if(pstmt.executeUpdate() == 1) {
-					System.out.println("해고처리 되었습니다.");
+					System.out.println("(੭•̀ᴗ•̀)੭ 해고처리 되었습니다.");
 				} else {
-					System.out.println("제대로 입력해주세요.");
+					System.out.println("(੭•̀ᴗ•̀)੭ 제대로 입력해주세요.");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -196,7 +196,7 @@ public class hdofcUserRepositiry {
 		// 월급 계산(보너스 포함 금액)
 		
 		public int calcSalary(int calNum) {
-			System.out.println("선택하신 직원 ID: " + calNum);
+			System.out.println("(੭•̀ᴗ•̀)੭ 선택하신 직원 ID: " + calNum);
 			String sql = "SELECT hdofc_salary, hdofc_bonus, hdofc_id, hdofc_name FROM hdofc WHERE hdofc_id=?";			
 			try(Connection conn = connection.getConnection();					
 					PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -211,7 +211,7 @@ public class hdofcUserRepositiry {
 			
 			System.out.println(" ");
 			System.out.println("================== 보너스 포함 월급 ==========\n");
-			System.out.println("직원ID: " + c + " 이름: "  + d + " 보너스 포함 월급: " + (a + (a*b)) + "만원 입니다.\n");
+			System.out.println("(੭•̀ᴗ•̀)੭ 직원ID: " + c + " 이름: "  + d + " 보너스 포함 월급: " + (a + (a*b)) + "만원 입니다.\n");
 			System.out.println("=========================================");
 			
 			}		
@@ -242,7 +242,7 @@ public class hdofcUserRepositiry {
 			String d = rs.getString("hdofc_name");
 			
 			System.out.println(" ");
-			System.out.println("직원ID: " + c + " 이름: "  + d + " 보너스 포함 월급: " + (a + (a*b)) + "만원 입니다.\n");
+			System.out.println("(੭•̀ᴗ•̀)੭ 직원ID: " + c + " 이름: "  + d + " 보너스 포함 월급: " + (a + (a*b)) + "만원 입니다.\n");
 			System.out.println("==========================================");
 			
 			}		

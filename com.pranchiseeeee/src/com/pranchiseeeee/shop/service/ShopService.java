@@ -30,7 +30,7 @@ public class ShopService implements AppService{
 				break;
 			case 3:
 				if(showSearchResult() == -1) {
-					System.out.println("번호를 잘못 입력하셨습니다.");
+					System.out.println("(੭•̀ᴗ•̀)੭ 번호를 잘못 입력하셨습니다.");
 				}
 				break;
 			case 4:
@@ -50,19 +50,19 @@ public class ShopService implements AppService{
 	private void joinShop() {
 
 		System.out.println("\n====== 매장 추가를 진행합니다. ======");
-		System.out.print("# 점주명: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 점주명: ");
 		String ownerName = inputString();
 
-		System.out.print("# 매장 전화번호: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 매장 전화번호: ");
 		String shopNum = inputString();
 
-		System.out.print("# 점주 전화번호: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 점주 전화번호: ");
 		String ownerNum = inputString();
 
-		System.out.print("# 매장 주소: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 매장 주소: ");
 		String shopAddress = inputString();
 
-		System.out.print("# 매장 오픈일: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 매장 오픈일: ");
 		String shopOpenDate = inputString();
 
 		Shop shop = new Shop(0, ownerName, shopNum, ownerNum, shopAddress, shopOpenDate);
@@ -82,7 +82,7 @@ public class ShopService implements AppService{
 	private void deleteShop() {
 
 		if(showSearchResult() > 0) {
-			System.out.println("\n### 삭제할 매장의 번호를 입력하세요.");
+			System.out.println("\nᕦ( ᐛ )ᕡ 삭제할 매장의 번호를 입력하세요.");
 			System.out.print(">>> ");
 			int delShop = inputInteger();
 			shopRepository.deleteShop(delShop);
@@ -94,18 +94,18 @@ public class ShopService implements AppService{
 	int name = 0;
 
 	private List<Shop> searchShopId() {
-		System.out.println("\n### 조회할 매장의 번호를 입력하세요.");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회할 매장의 번호를 입력하세요.");
 		System.out.print(">>> ");
 		int shopId = inputInteger();
 		return shopRepository.findByShopId(shopId);
 	}
 
 	private List<Shop> searchShopAddress() {
-		System.out.println("\n### 조회할 매장의 주소를 입력하세요.");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회할 매장의 주소를 입력하세요.");
 		System.out.print(">>> ");
 		String shopAddress = inputString();
 		if(shopAddress.trim().equals("")) {
-			System.out.println("\n===== 공백은 전체검색입니다. =====");
+			System.out.println("\n(੭•̀ᴗ•̀)੭ 공백은 전체검색입니다.");
 		}
 		return shopRepository.findByShopAddress("'%"+shopAddress+"%'");
 	}
@@ -115,9 +115,7 @@ public class ShopService implements AppService{
 	//검색
 	private int showSearchResult() {
 		System.out.println("\n=============== 검색 방법 ==============");
-		System.out.println("\n### 1. 매장 아이디로 검색");
-		System.out.println("\n### 2. 매장 주소로 검색");
-		System.out.println("\n### 3. 전체 검색");
+		System.out.println("\n[ 1. 매장 아이디로 검색 | 2. 매장 주소로 검색 | 3. 전체 검색 ]");
 		System.out.print(">>> ");
 		name = inputInteger();
 		if(name == 1) {
@@ -128,7 +126,7 @@ public class ShopService implements AppService{
 					System.out.println(sh);
 				}
 			} else {
-				System.out.println("\n### 조회 결과가 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return shop.size();
 		} else if(name > 3 || name < 1) {
@@ -141,7 +139,7 @@ public class ShopService implements AppService{
 					System.out.println(sh);
 				}
 			} else {
-				System.out.println("\n### 조회 결과가 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return shop.size();
 		} else {
@@ -152,7 +150,7 @@ public class ShopService implements AppService{
 					System.out.println(sh);
 				}
 			} else {
-				System.out.println("\n### 조회 결과가 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return shop.size();
 		}

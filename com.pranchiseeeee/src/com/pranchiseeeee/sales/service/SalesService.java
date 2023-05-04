@@ -41,7 +41,7 @@ public class SalesService implements AppService{
 				return; //메인 화면으로 돌아가기
 
 			default:
-				System.out.println("메뉴를 다시 입력하세요.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 메뉴를 다시 입력하세요.");
 			}
 			System.out.println("\n====== 계속 진행하시려면 ENTER 를 누르세요 ======");
 			inputString();
@@ -58,7 +58,7 @@ public class SalesService implements AppService{
 
 
 	private int searchMonthly() {
-		System.out.println("\n### 조회할 매장의 번호를 입력하세요.");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회할 매장의 번호를 입력하세요.");
 		System.out.print(">>> ");
 		int shopId = inputInteger();
 		return salesRepository.findByMonthly(shopId);
@@ -73,7 +73,7 @@ public class SalesService implements AppService{
 	private int joinSales() {
 
 		System.out.println("\n==================== 매장 추가/수정 ====================");
-		System.out.println("\n============ 추가/수정은 저번달 값만 가능합니다. ============");
+		System.out.println("\n(੭•̀ᴗ•̀)੭ 추가/수정은 저번달 값만 가능합니다.");
 		String a = (String) serchShopSale();
 
 		return 0;
@@ -82,7 +82,7 @@ public class SalesService implements AppService{
 
 
 	private Object serchShopSale() {
-		System.out.println("\n### 조회할 매장의 번호를 입력하세요.");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회할 매장의 번호를 입력하세요.");
 		System.out.print(">>> ");
 		int shopId = inputInteger();
 		return salesRepository.findBySales(shopId);
@@ -95,7 +95,7 @@ public class SalesService implements AppService{
 
 
 	private List<Sales> searchShopId() {
-		System.out.println("\n### 조회할 매장의 번호를 입력하세요.");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회할 매장의 번호를 입력하세요.");
 		System.out.print(">>> ");
 		int shopId = inputInteger();
 		return salesRepository.findByShopId(shopId);
@@ -107,8 +107,7 @@ public class SalesService implements AppService{
 	//검색
 	private int showSearchResult() {
 		System.out.println("\n=============== 검색 방법 ==============");
-		System.out.println("\n### 1. 매장 아이디로 검색");
-		System.out.println("\n### 2. 전체 검색");
+		System.out.println("\n[ 1.매장 아이디로 | 검색 2.전체검색 ]");
 		System.out.print(">>> ");
 		int name = inputInteger();
 
@@ -121,7 +120,7 @@ public class SalesService implements AppService{
 					System.out.println(sa);
 				}
 			} else {
-				System.out.println("\n### 조회 결과가 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return shop.size();
 		} else if(name == 2) {
@@ -132,11 +131,11 @@ public class SalesService implements AppService{
 					System.out.println(sa);
 				}
 			} else{
-				System.out.println("\n### 조회 결과가 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return shop.size();
 		} else {
-			System.out.println("잘못입력하셨습니다.");
+			System.out.println("(੭•̀ᴗ•̀)੭ 잘못입력하셨습니다.");
 			return -1;
 		}
 	}

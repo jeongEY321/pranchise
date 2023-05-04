@@ -49,19 +49,19 @@ public class SideMenuService implements AppService {
 
 	private void insertSideMenuData() {
 		System.out.println("\n======= 사이드메뉴 정보를 추가합니다. =======");
-		System.out.print("# 사이드메뉴 이름: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 사이드메뉴 이름: ");
 		String sidemenuName = inputString();
 		
-		System.out.print("# 사이드메뉴 가격: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 사이드메뉴 가격: ");
 		int sidemenuPrice = inputInteger();
 		
-		System.out.print("# 사이드메뉴 설명: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 사이드메뉴 설명: ");
 		String sidemenuExplanation = inputString();
 		
-		System.out.print("# 사이드메뉴 출시일: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 사이드메뉴 출시일: ");
 		String sidemenuReleseDate = inputString();
 
-		System.out.print("# 사이드메뉴 판매여부: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 사이드메뉴 판매여부: ");
 		String sidemenuImpst2 = inputString();
 		
 		String menuImpst = "";
@@ -92,24 +92,24 @@ public class SideMenuService implements AppService {
 		Side side = ALL;
 		switch (selection) {
 		case 1:
-			System.out.println("\n### 이름으로 검색합니다.");
+			System.out.println("\n(੭•̀ᴗ•̀)੭ 이름으로 검색합니다.");
 				side = SIDEMENU_NAME;
 			break;
 		case 2:
-			System.out.println("\n### 가격으로 검색합니다.");
+			System.out.println("\n(੭•̀ᴗ•̀)੭ 가격으로 검색합니다.");
 			side = SIDEMENU_PRICE;
 			break;
 		case 3:
-			System.out.println("\n### 전체 정보를 검색합니다.");
+			System.out.println("\n(੭•̀ᴗ•̀)੭ 전체 정보를 검색합니다.");
 			break;
 
 		default:
-			System.out.println("\n### 잘못 입력했습니다.");
+			System.out.println("\n(੭•̀ᴗ•̀)੭ 잘못 입력했습니다.");
 		}
 		
 		String keyword = "";
 		if(side != ALL) {
-			System.out.print("# 검색어: ");
+			System.out.print("ᕦ( ᐛ )ᕡ 검색어: ");
 			keyword = inputString();
 		}
 		
@@ -129,7 +129,7 @@ public class SideMenuService implements AppService {
 		
 		//삭제할 회원의 이름을 입력받아서 삭제 대상 회원만 가지고 오자.	
 		if(showSearchResult() > 0 ) {
-			System.out.println("\n### 삭제할 사이드메뉴 이름을 입력해주세요:");
+			System.out.println("\nᕦ( ᐛ )ᕡ 삭제할 사이드메뉴 이름을 입력해주세요:");
 			System.out.println(">>> ");
 			String delSideMenuName = inputString();
 			sidemenuRepository.deleteSideMenu(delSideMenuName);

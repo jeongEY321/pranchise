@@ -33,9 +33,9 @@ public class SideMenuRepository {
 			
 			
 			if(pstmt.executeUpdate() == 1) {
-				System.out.printf("\n### [%s] 사이드메뉴 신규 등록이 완료되었습니다.\n", sidemenu.getSidemenuName());
+				System.out.printf("\n(੭•̀ᴗ•̀)੭ [%s] 사이드메뉴 신규 등록이 완료되었습니다.\n", sidemenu.getSidemenuName());
 			} else {
-				System.out.println("신규 사이드메뉴 등 록 실패!");
+				System.out.println("(੭•̀ᴗ•̀)੭ 신규 사이드메뉴 등 록 실패!");
 			}
 
 		} catch (Exception e) {
@@ -84,7 +84,7 @@ public class SideMenuRepository {
 				}
 				System.out.printf("\n============================ 검색 결과 (총 %d건) ============================\n", sidemenuList.size());
 			} else {
-				System.out.println("\n### 검색 결과가 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 검색 결과가 없습니다.");
 			}
 
 		} catch (Exception e) {
@@ -132,9 +132,9 @@ public class SideMenuRepository {
 	        pstmt.setString(1, sidemenuName);
 	        int rowsDeleted = pstmt.executeUpdate(); // 쿼리 실행 메서드 호출
 	        if (rowsDeleted == 1) {
-	            System.out.println("\n### 메뉴정보가 정상 삭제되었습니다.");
+	            System.out.println("\n(੭•̀ᴗ•̀)੭ 메뉴정보가 정상 삭제되었습니다.");
 	        } else {
-	            System.out.println("\n### 검색한 메뉴의 메뉴이름으로만 삭제가 가능합니다.");
+	            System.out.println("\n(੭•̀ᴗ•̀)੭ 검색한 메뉴의 메뉴이름으로만 삭제가 가능합니다.");
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();

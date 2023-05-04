@@ -20,7 +20,7 @@ public class SalesRepository {
 	//전체 검색
 	public List<Sales> findByAll() {
 		List<Sales> salesList = new ArrayList<>();
-		System.out.print("년도: 20");
+		System.out.print("ᕦ( ᐛ )ᕡ 년도: 20");
 		int year = inputInteger();
 
 		String sql = "SELECT * FROM sales"+ year;
@@ -52,9 +52,9 @@ public class SalesRepository {
 
 		} catch (Exception e) {
 			if(year > 23) {
-				System.out.println("\n미래의 매출자료는 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 미래의 매출자료는 없습니다.");
 			} else {
-				System.out.println("\n작성하신 년도에는 아직 매장 오픈을 하지 않았습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 작성하신 년도에는 아직 매장 오픈을 하지 않았습니다.");
 			}
 		}
 		return salesList;
@@ -65,7 +65,7 @@ public class SalesRepository {
 	//매장 아이디으로 정보 검색
 	public List<Sales> findByShopId(int shopId) {
 		List<Sales> salesList = new ArrayList<>();
-		System.out.print("년도: 20");
+		System.out.print("ᕦ( ᐛ )ᕡ 년도: 20");
 		int year = inputInteger();
 
 		String sql = "SELECT * FROM sales"+ year +" WHERE shop_id = "+shopId;
@@ -109,7 +109,7 @@ public class SalesRepository {
 		String mon = now.getMonth().toString();
 
 		String mont = "";
-		System.out.print("값: ");
+		System.out.print("ᕦ( ᐛ )ᕡ 값: ");
 		int money = inputInteger();
 
 		switch (mon) {
@@ -210,27 +210,27 @@ public class SalesRepository {
 				}
 
 				if(sum == 0) {
-					System.out.println("매출작성을 안하셨습니다.");
+					System.out.println("(੭•̀ᴗ•̀)੭ 매출작성을 안하셨습니다.");
 					break;
 				}
 
 				if(abc.length == 0) {
-					System.out.println("매장 오픈하기 전 년도 입니다.");
+					System.out.println("(੭•̀ᴗ•̀)੭ 매장 오픈하기 전 년도 입니다.");
 				}
 
-				System.out.println("월평균: " + (sum/(12-count)));
+				System.out.println("(੭•̀ᴗ•̀)੭ 월평균: " + (sum/(12-count)));
 
 
 			}
 			if(err == 0) { // 값이 없을 때
-				System.out.println("\n" + year + "년도엔 작성하신 매장이 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ " + year + "년도엔 작성하신 매장이 없습니다.");
 			}
 		} catch (Exception e) {
 			//년도 에러 (테이블이 없을 때 에러)
 			if(year > 23) {
-				System.out.println("\n미래의 매출자료는 없습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 미래의 매출자료는 없습니다.");
 			} else {
-				System.out.println("\n작성하신 년도에는 아직 매장 오픈을 하지 않았습니다.");
+				System.out.println("\n(੭•̀ᴗ•̀)੭ 작성하신 년도에는 아직 매장 오픈을 하지 않았습니다.");
 			}
 		}
 

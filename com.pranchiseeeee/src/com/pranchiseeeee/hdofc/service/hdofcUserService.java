@@ -23,7 +23,7 @@ public class hdofcUserService implements AppService {
 			switch (selection) {
 			case 1:
 				if(showHdofcUser() == -1) {
-					System.out.println("번호를 잘못 입려하셨습니다.");
+					System.out.println("(੭•̀ᴗ•̀)੭ 번호를 잘못 입력하셨습니다.");
 				}
 				break;
 			case 2:
@@ -40,7 +40,7 @@ public class hdofcUserService implements AppService {
 
 
 			default:
-				System.out.println("메뉴를 다시 입력하세요.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 메뉴를 다시 입력하세요.");
 			}
 			System.out.println("\n====== 계속 진행하시려면 ENTER 를 누르세요 ======");
 			inputString();
@@ -52,7 +52,7 @@ public class hdofcUserService implements AppService {
 
 	// 이름 검색
 	private List<HdofcUser> searchHdofcUSerName() {
-		System.out.println("\n ##### 조회 하실 이름: ####");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회 하실 이름: ");
 		System.out.print(">>> ");
 		String name = inputString();
 		return hdofcUserRps.findUserName(name);
@@ -61,7 +61,7 @@ public class hdofcUserService implements AppService {
 	}
 	// ID 검색
 	private  List<HdofcUser> searchHdofcUserNum() {
-		System.out.println("\n ##### 조회 하실 번호: ####");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회 하실 번호: ");
 		System.out.print(">>> ");
 		int num = inputInteger();
 		return hdofcUserRps.findUserNum(num);
@@ -76,10 +76,8 @@ public class hdofcUserService implements AppService {
 
 	private int showHdofcUser() {
 
-		System.out.println("\n ##### 조회 하실 이름: ####");
-		System.out.println("\n 1. ID로 검색");
-		System.out.println("\n 2. 이름으로 검색");
-		System.out.println("\n 3. 전체 검색");
+		System.out.println("\nᕦ( ᐛ )ᕡ 조회 방법");
+		System.out.println("\n{ 1. ID로 검색 | 2. 이름으로 검색 | 3. 전체 검색 ]");
 		System.out.print(">>> ");
 		int number = inputInteger();
 
@@ -87,12 +85,12 @@ public class hdofcUserService implements AppService {
 		if(number == 1) {
 			List<HdofcUser>	showNum = searchHdofcUserNum();
 			if(!showNum.isEmpty()) {
-				System.out.println("조회 결과 입니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 조회 결과 입니다.");
 				for(HdofcUser  user : showNum) {
 					System.out.println(user);
 				}
 			} else {
-				System.out.println("조회 결과가 없습니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return showNum.size();
 		} else if (number > 3 || number < 1) {
@@ -100,23 +98,23 @@ public class hdofcUserService implements AppService {
 		} else if(number == 3) {
 			List<HdofcUser>	showNum = searchHdofcAllUser();
 			if(!showNum.isEmpty()) {
-				System.out.println("조회 결과 입니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 조회 결과 입니다.");
 				for(HdofcUser  user : showNum) {
 					System.out.println(user);
 				}
 			} else {
-				System.out.println("조회 결과가 없습니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return showNum.size();
 		} else {
 			List<HdofcUser> showName = searchHdofcUSerName();
 			if(!showName.isEmpty()) {
-				System.out.println("조회 결과 입니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 조회 결과 입니다.");
 				for(HdofcUser users : showName) {
 					System.out.println(users);
 				}
 			} else {
-				System.out.println("조회 결과가 없습니다.");
+				System.out.println("(੭•̀ᴗ•̀)੭ 조회 결과가 없습니다.");
 			}
 			return showName.size();
 		}
@@ -129,28 +127,28 @@ public class hdofcUserService implements AppService {
 	private void joinUser() {
 		
 		System.out.println("### 직원을 추가합니다 ###");
-		System.out.println("# - 이름: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 이름: ");
 		String name = inputString();
 		
-		System.out.println("# - 주민등록번호: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 주민등록번호: ");
 		String rrNum = inputString();
 		
-		System.out.println("# - 주소: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 주소: ");
 		String address = inputString();
 		
-		System.out.println("# - 입사일: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 입사일: ");
 		int hireDate = inputInteger();
 		
-		System.out.println("# - 부서: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 부서: ");
 		String team = inputString();
 		
-		System.out.println("# - 직급: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 직급: ");
 		String position = inputString();
 		
-		System.out.println("# - 월급: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 월급: ");
 		int salary = inputInteger();
 		
-		System.out.println("# - 보너스: ");
+		System.out.println("ᕦ( ᐛ )ᕡ 보너스: ");
 		double bonus = inputDouble();
 		
 		HdofcUser user = new HdofcUser();
@@ -175,7 +173,7 @@ public class hdofcUserService implements AppService {
 		
 		private void fireUser() {
 			if(showHdofcUser() > 0) {
-				System.out.println("해고할 직원의 번호를 입력해주세요.");
+				System.out.println("ᕦ( ᐛ )ᕡ 해고할 직원의 번호를 입력해주세요.");
 				System.out.print(">>> ");
 				int fireNum = inputInteger();
 				hdofcUserRps.fireUser(fireNum);
@@ -188,7 +186,7 @@ public class hdofcUserService implements AppService {
 			for(HdofcUser  user : showNum) {
 				System.out.println(user);
 			}
-			System.out.println("조회하실 ID를 입력해주세요: ");
+			System.out.println("ᕦ( ᐛ )ᕡ 조회하실 ID를 입력해주세요: ");
 			System.out.println(">>>");
 				int calNum = inputInteger();
 				
