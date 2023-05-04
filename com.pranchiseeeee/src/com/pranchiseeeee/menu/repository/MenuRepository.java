@@ -30,13 +30,13 @@ public class MenuRepository {
 			
 			
 			if(pstmt.executeUpdate() == 1) {
-				System.out.printf("\n(੭•̀ᴗ•̀)੭ [%s] 메뉴 신규 등록되었습니다.\n", menu.getMenuName());
+				System.out.printf("\n### [%s] 메뉴 신규 등록되었습니다.\n", menu.getMenuName());
 			} else {
-				System.out.println("(੭•̀ᴗ•̀)੭ 신규 메뉴 등 록 실패!");
+				System.out.println("신규 메뉴 등 록 실패!");
 			}
 
 		} catch (Exception e) {
-			System.out.println("(੭•̀ᴗ•̀)੭ 중복 메뉴는 등록이 불가능합니다.");
+			e.printStackTrace();
 		}
 
 	}
